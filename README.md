@@ -1,5 +1,4 @@
-# Challenge Django Consultant
-## _Teste Técnico para Consultor Django DigitalSys_
+# Sistema para gestão de academia de natação
 
 ### Para executar
 - Necessário o docker no ambiente

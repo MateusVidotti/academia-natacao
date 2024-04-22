@@ -28,6 +28,10 @@ urlpatterns = [
     path('do_login', views.do_login),
     path('admin_home', hod_views.admin_home),
     path('add_staff', hod_views.add_staff),
-    path('add_staff_save', hod_views.add_staff_save)
+    path('add_course', hod_views.add_course),
+    path('add_student', hod_views.add_student),
+    path('add_staff_save', hod_views.add_staff_save),
+    path('add_course_save', hod_views.add_course_save),
+    path('add_student_save', hod_views.add_student_save),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)+static(
     settings.STATIC_URL, document_root=settings.STATIC_ROOT)

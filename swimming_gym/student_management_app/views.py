@@ -24,7 +24,12 @@ def do_login(request):
                                          )
         if user is not None:
             login(request, user)
-            return HttpResponseRedirect('/admin_home')
+            if user.user_type == '1':
+                return HttpResponseRedirect('/admin_home')
+            elif user.user_type == '2':
+                return HttpResponse('Staff login')
+            else:
+                return HttpResponse('Student login')
         else:
             messages.error(request, 'Dados de Login Inválidos')
             return HttpResponseRedirect('/')

@@ -1,5 +1,4 @@
 from django.db import models
-from empresas.models import Empresa
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 
 
@@ -23,7 +22,6 @@ class CustomUserManager(BaseUserManager):
 
 
 class CustomUser(AbstractBaseUser, PermissionsMixin):
-    empresa = models.ForeignKey(Empresa, verbose_name='Empresa', on_delete=models.CASCADE, null=True)
     email = models.EmailField(unique=True)
     nome = models.CharField(max_length=100)
     is_admin = models.BooleanField(default=False, verbose_name='Admin')

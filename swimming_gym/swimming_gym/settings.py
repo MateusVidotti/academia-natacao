@@ -39,11 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bootstrap5',
+    'empresas', # para deletar
     'django_tables2',
-    'empresas',
     'usuarios',
     'login',
     'painel',
+    'fornecedores',
 ]
 
 MIDDLEWARE = [

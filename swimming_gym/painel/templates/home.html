@@ -1,10 +1,6 @@
-{% extends 'hod_templates/base_template.html' %}
-{% block page_title %}
-Home
-{% endblock page_title %}
-{% block main_content %}
-<section class="content">
-      <div class="container-fluid">
-      </div>
-    </section>
-{% endblock main_content %}
+{% extends "index.html" %}
+{% load static %}
+
+{% block content %}
+{{ context_teste }}
+{% endblock content %}

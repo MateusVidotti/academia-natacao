@@ -29,7 +29,7 @@
     <div class="card-body login-card-body">
       <p class="login-box-msg">Faça o login para começar</p>
 
-      <form action="/do_login" method="post">
+      <form action="/login/" method="post">
         {% csrf_token %}
         <div class="input-group mb-3">
           <input type="email" class="form-control" placeholder="Email" name="email">

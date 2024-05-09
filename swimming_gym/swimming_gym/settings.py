@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'painel',
     'fornecedores',
     'alunos',
-    'pagamentos'
+    'pagamentos',
+    'recebimentos',
 ]
 
 MIDDLEWARE = [

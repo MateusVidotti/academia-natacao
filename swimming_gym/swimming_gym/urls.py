@@ -24,7 +24,7 @@ urlpatterns = [
     # path('clientes/', include('app_clientes.urls')),
     path('fornecedores/', include('fornecedores.urls')),
     path('pagamentos/', include('pagamentos.urls')),
-    # path('recebimentos/', include('app_recebimentos.urls')),
+    path('recebimentos/', include('recebimentos.urls')),
     path('usuarios/', include('usuarios.urls')),
     path('alunos/', include('alunos.urls')),
     path('login/', include('login.urls')),

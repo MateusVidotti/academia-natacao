@@ -11,3 +11,5 @@ class Aluno(models.Model):
     cidade = models.CharField(max_length=100, verbose_name='Cidade')
     estado = models.CharField(max_length=2, verbose_name='Estado')
 
+    def __str__(self):
+        return self.nome

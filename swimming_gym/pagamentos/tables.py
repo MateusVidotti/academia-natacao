@@ -12,4 +12,4 @@ class PagamentoTable(tables.Table):
     class Meta:
         model = Pagamento
         attrs = {'class': 'table table-bordered table-hover'}
-        fields = ('fornecedor', 'data_emissao' ,'data_vencimento', 'status')
+        fields = ('fornecedor', 'data_emissao', 'data_vencimento', 'status', 'valor')

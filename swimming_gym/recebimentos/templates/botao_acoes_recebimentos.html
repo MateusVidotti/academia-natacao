@@ -1,0 +1,9 @@
+<div class="dropdown">
+    <button class="btn btn-dark btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+        Opções
+    </button>
+    <div class="dropdown-menu">
+        <a class="dropdown-item" href="{% url "recebimentos:editar_recebimento" record.id %}">Editar</a>
+        <a class="dropdown-item" href="{% url "recebimentos:deletar_recebimento" record.id %}">Deletar</a>
+    </div>
+</div>

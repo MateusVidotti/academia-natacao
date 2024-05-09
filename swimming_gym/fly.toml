@@ -1,10 +1,10 @@
-# fly.toml app configuration file generated for swimming-gym-billowing-water-6311 on 2024-05-09T08:59:08-03:00
+# fly.toml app configuration file generated for swimming-gym-ancient-sea-4164 on 2024-05-09T16:23:41-03:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'swimming-gym-billowing-water-6311'
-primary_region = 'gig'
+app = 'swimming-gym-ancient-sea-4164'
+primary_region = 'dfw'
 console_command = '/code/manage.py shell'
 
 [build]

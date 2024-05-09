@@ -21,7 +21,10 @@ RUN poetry config virtualenvs.create false
 RUN poetry install --only main --no-root --no-interaction
 COPY . /code
 
-ENV SECRET_KEY "D6hsRialHCGUvhDpmkcAN29ud2ImVJESr36QNzZLXfFMLl1Hmz"
+ENV SECRET_KEY "2J9j5bZ6CkKOgqeU4a2fNaRqhwWHDSLICvLEo3YlTPRqTf2I9I"
+RUN python manage.py makemigrations
+RUN python manage.py migrate
+
 RUN python manage.py collectstatic --noinput
 
 EXPOSE 8000

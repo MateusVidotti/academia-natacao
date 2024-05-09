@@ -1,22 +1,29 @@
-FROM python:3.12-slim
-WORKDIR /code
+ARG PYTHON_VERSION=3.11-slim-bullseye
 
-# variáveis para desenvolvimento
+FROM python:${PYTHON_VERSION}
+
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
-ENV PYTHONPATH /code
+# install psycopg2 dependencies.
+RUN apt-get update && apt-get install -y \
+    libpq-dev \
+    gcc \
+    && rm -rf /var/lib/apt/lists/*
 
-RUN pip install --upgrade pip && \
-    pip install poetry && \
-    poetry config virtualenvs.create false
+RUN mkdir -p /code
 
-# Instala apenas as dependências.
-COPY ./swimming_gym .
-RUN poetry install --no-root --only main
+WORKDIR /code
 
-#COPY ./lfg/start-celeryworker /start-celeryworker
-#RUN chmod +x /start-celeryworker
-COPY ./swimming_gym/start-django /start-django
-RUN sed -i 's/\r$//g' /start-django
-RUN chmod +x /start-django
+RUN pip install poetry
+COPY pyproject.toml poetry.lock /code/
+RUN poetry config virtualenvs.create false
+RUN poetry install --only main --no-root --no-interaction
+COPY . /code
+
+ENV SECRET_KEY "D6hsRialHCGUvhDpmkcAN29ud2ImVJESr36QNzZLXfFMLl1Hmz"
+RUN python manage.py collectstatic --noinput
+
+EXPOSE 8000
+
+CMD ["gunicorn", "--bind", ":8000", "--workers", "2", "swimming_gym.wsgi"]

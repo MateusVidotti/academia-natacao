@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-y3=4xhytbgype34cu_$4*f=wttletve#enqaie113ad(k9-v*x
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -39,12 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bootstrap5',
-    'empresas', # para deletar
     'django_tables2',
     'usuarios',
     'login',
     'painel',
     'fornecedores',
+    'alunos'
 ]
 
 MIDDLEWARE = [
@@ -83,14 +83,11 @@ WSGI_APPLICATION = 'swimming_gym.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
-        'ENGINE': environ.get('SQL_ENGINE', 'django.db.backends.postgresql'),
-        'NAME': environ.get('SQL_DATABASE', 'postgres'),
-        'USER': environ.get('SQL_USER', 'postgres'),
-        'PASSWORD': environ.get('SQL_PASSWORD', 'postgres'),
-        'HOST': environ.get('SQL_HOST', 'localhost'),
-        'PORT': environ.get('SQL_PORT', '5432'),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 

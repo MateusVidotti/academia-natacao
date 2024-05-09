@@ -26,6 +26,7 @@ urlpatterns = [
     # path('pagamentos/', include('app_pagamentos.urls')),
     # path('recebimentos/', include('app_recebimentos.urls')),
     path('usuarios/', include('usuarios.urls')),
+    path('alunos/', include('alunos.urls')),
     path('login/', include('login.urls')),
     # path('pedidos/', include('app_pedidos.urls')),
 ]

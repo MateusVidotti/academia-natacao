@@ -1,0 +1,44 @@
+{% extends "index.html" %}
+
+{% block main_content %}
+<a href="{% url "alunos:adicionar_aluno" %}" class="btn btn-primary mb-3">
+    <span class="fas fa-plus mr-1"></span>
+    Cadastrar
+</a>
+<div class="card-table">
+    <div class="card">
+        <div class="card-body">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Telefone</th>
+                        <th>Cidade</th>
+                        <th>Opções</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for aluno in alunos %}
+                        <tr>
+                            <td>{{ aluno.nome }}</td>
+                            <td>{{ aluno.telefone }}</td>
+                            <td>{{ aluno.cidade }}</td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-dark btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Opções
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="{% url "alunos:editar_aluno" aluno.id %}">Editar</a>
+                                        <a class="dropdown-item" href="{% url "alunos:deletar_aluno" aluno.id %}">Deletar</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock main_content %}

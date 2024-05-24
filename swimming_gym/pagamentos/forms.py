@@ -35,5 +35,10 @@ class EditPagamentoForm(forms.ModelForm):
             'status',
         ]
         widgets = {
-            'data_vencimento': forms.widgets.DateInput(attrs={'type': 'date'})
+            'data_vencimento': forms.DateInput(
+                format=('%Y-%m-%d'),
+                attrs={'class': 'form-control',
+                       'placeholder': 'Select a date',
+                       'type': 'date'
+                       }),
         }

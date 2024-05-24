@@ -1,6 +1,10 @@
 {% extends "index.html" %}
 {% load bootstrap5 %}
 
+{% block page_title %}
+Recebimentos
+{% endblock page_title %}
+
 {% block main_content %}
     <a href="{% url "recebimentos:recebimentos" %}" class="btn btn-primary mb-3">
         <span class="fas fa-arrow-left mr-1"></span>

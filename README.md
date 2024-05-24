@@ -17,6 +17,7 @@
 - acesse a pasta do projeto
 - acesse a pasta swimming_gym `cd swimming_gym`
 - execute `pip install requirements.txt` para instalar as dependências.
+- Na primeira execução, faça a migração do db executando `python manage.py makemigrations usuarios` e `python manage.py migrate usuarios`
 - Na primeira execução, faça a migração do db executando `python manage.py makemigrations` e `python manage.py migrate`
 - Na primeira execução, crie um usuário admin executando `python manage.py createsuperuser` entre com email e senha.
 - para executar o servidor django `python manage.py runserver`

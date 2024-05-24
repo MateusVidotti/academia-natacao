@@ -1,5 +1,8 @@
 {% extends "index.html" %}
 {% load bootstrap5 %}
+{% block page_title %}
+Pagamentos
+{% endblock page_title %}
 
 {% block main_content %}
     <a href="{% url "pagamentos:pagamentos" %}" class="btn btn-primary mb-3">

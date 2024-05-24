@@ -3,7 +3,7 @@ from recebimentos.models import Recebimento
 
 
 class RecebimentoTable(tables.Table):
-    aluno = tables.Column(verbose_name='Aluno', orderable=True)
+    aluno = tables.Column(verbose_name='Aluno', orderable=False)
     data_emissao = tables.Column(verbose_name='Data emissão', orderable=False)
     data_vencimento = tables.Column(verbose_name='Data vencimento', orderable=False)
     status = tables.Column(verbose_name='Status', orderable=False)
@@ -13,4 +13,4 @@ class RecebimentoTable(tables.Table):
     class Meta:
         model = Recebimento
         attrs = {'class': 'table table-bordered table-hover'}
-        fields = ('aluno', 'data_emissao', 'data_vencimento', 'status', 'valor')
+        fields = ('aluno', 'data_emissao', 'data_vencimento', 'status', 'valor', 'opcao')

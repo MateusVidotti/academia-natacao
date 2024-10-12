@@ -1,6 +1,6 @@
 # Sistema para gestão de academia de natação
 
-### Para executar com docker
+### Para executar com docker em homologação
 - Necessário o docker no ambiente
 - Clone o diretório
 - Acesse o diretório e execute`docker-compose up --build`
